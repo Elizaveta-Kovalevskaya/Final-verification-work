@@ -36,6 +36,19 @@ void ArrString(string[] arrayString, int size)
   Console.Write("]");
 }
 
+string[] NewArrayString (string[] arrayString,int size)
+{
+  string[] newArrayString = new string[size];
+  for(int i = 0; i < size; i++)
+  {
+    if(arrayString[i].Length <= 3)
+    {
+      newArrayString[i] = arrayString[i];
+    }
+  }
+  return newArrayString;
+}
+
 Console.Write("Input a array size: ");
 int m = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Input a array string: ");
@@ -45,3 +58,7 @@ ShowArray(MyArray);
 Console.WriteLine();
 Console.WriteLine();
 ArrString(MyArray, m);
+Console.WriteLine();
+Console.WriteLine();
+string[] newArray = NewArrayString(MyArray, m);
+ShowArray(newArray);
